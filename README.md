@@ -83,7 +83,7 @@ Older versions of cordova can still install via the deprecated id ( stale 0.3.12
 
 It is also possible to install via repo url directly ( unstable )
 
-    cordova plugin add https://github.com/apache/cordova-plugin-geolocation.git
+    cordova plugin add https://github.com/srengty/cordova-plugin-geolocation.git
 
 ## Supported Platforms
 
