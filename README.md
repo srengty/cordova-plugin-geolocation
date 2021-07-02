@@ -162,23 +162,23 @@ error, the `geolocationError` callback is passed a
  * `NSLocationWhenInUseUsageDescription` describes the reason that the app accesses the user's location, this is used while the app is running in the foreground.
  * `NSLocationAlwaysAndWhenInUseUsageDescription` describes the reason that the app is requesting access to the user’s location information at all times. Use this key if your iOS app accesses location information while running in the background and foreground. 
  * `NSLocationAlwaysUsageDescription` describes the reason that the app is requesting access to the user's location at all times. Use this key if your app accesses location information in the background and you deploy to a target earlier than iOS 11. For iOS 11 and later, add both `NSLocationAlwaysUsageDescription` and `NSLocationAlwaysAndWhenInUseUsageDescription` to your app’s `Info.plist` file with the same message.
+ 
+ The default description for `NSLocationAlwaysAndWhenInUseUsageDescription`, `NSLocationWhenInUseUsageDescription` and `NSLocationAlwaysUsageDescription` is `"need location access to find things nearby"`. To modify these entries into the `info.plist`, you can use the `config-file` tag in the `config.xml` like this:
 
- To add these entries into the `info.plist`, you can use the `edit-config` tag in the `config.xml` like this:
-
 ```
-<edit-config target="NSLocationWhenInUseUsageDescription" file="*-Info.plist" mode="merge">
+<config-file target="*-Info.plist" parent="NSLocationWhenInUseUsageDescription">
     <string>need location access to find things nearby</string>
-</edit-config>
+</config-file>
 ```
 ```
-<edit-config target="NSLocationAlwaysAndWhenInUseUsageDescription" file="*-Info.plist" mode="merge">
+<config-file target="*-Info.plist" parent="NSLocationAlwaysAndWhenInUseUsageDescription">
     <string>need location access to find things nearby</string>
-</edit-config>
+</config-file>
 ```
 ```
-<edit-config target="NSLocationAlwaysUsageDescription" file="*-Info.plist" mode="merge">
+<config-file target="*-Info.plist" parent="NSLocationAlwaysUsageDescription">
     <string>need location access to find things nearby</string>
-</edit-config>
+</config-file>
 ```
  
 ### Android Quirks
